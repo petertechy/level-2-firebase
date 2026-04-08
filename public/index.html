@@ -88,16 +88,22 @@
         let email = document.getElementById("email").value;
         let password = document.getElementById("password").value;
 
-        let userInfo = { firstname, lastname, gender, email };
+        let userInfo = {
+          firstname,
+          lastname,
+          gender,
+          email,
+          createdAt: new Date().toISOString(),
+        };
 
         console.log(userInfo);
 
         createUserWithEmailAndPassword(auth, email, password)
           .then((response) => {
             console.log(response);
-            let uid = response.user.uid
+            let uid = response.user.uid;
 
-            console.log(uid)
+            console.log(uid);
 
             let userRef = ref(db, `users/${uid}`);
             set(userRef, userInfo)
