@@ -55,7 +55,7 @@
           const uid = user.uid;
           console.log(uid);
 
-          const userRef = ref(database, `user/${uid}`);
+          const userRef = ref(database, `users/${uid}`);
           onValue(userRef, (snapshot) => {
             const data = snapshot.val();
 

@@ -21,7 +21,7 @@ document.getElementById("signIn").addEventListener("click", () => {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       console.log(userCredential);
-      location.href = "/dashboard.html";
+      location.href = "/public/dashboard.html";
     })
     .catch((error) => {
       const errorCode = error.code;
